@@ -22,9 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (target.nodeName === 'IMG') {
       const originalSrc = target.dataset.source;
-      const modalImg = document.querySelector('.gallery__image');
-
-      modalImg.setAttribute('src', originalSrc);
 
       const modal = basicLightbox.create(`
         <div class="modal">
@@ -33,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
       `);
 
       modal.show();
+
+      const modalImg = document.querySelector('.basicLightbox__placeholder');
+      modalImg.addEventListener('click', () => {
+        modal.close();
+      });
     }
   });
 });

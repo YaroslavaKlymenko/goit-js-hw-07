@@ -16,24 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 
-  gallery.addEventListener('click', event => {
-    event.preventDefault();
+//   gallery.addEventListener('click', event => {
+//     event.preventDefault();
 
-    const { target } = event;
+//     const { target } = event;
 
-    if (target.nodeName === 'IMG') {
-      const originalSrc = target.closest('.gallery__link').getAttribute('href');
-      const modalImg = document.querySelector('.gallery__image');
+//     if (target.nodeName === 'IMG') {
+//       const originalSrc = target.closest('.gallery__link').getAttribute('href');
+//       const modalImg = document.querySelector('.gallery__image');
 
-      modalImg.setAttribute('src', originalSrc);
+//       modalImg.setAttribute('src', originalSrc);
 
       const lightbox = new SimpleLightbox('.gallery a', {
         captionsData: 'alt',
         captionDelay: 250,
       });
    
-      lightbox.open();
-    }
-  });
-});
+    //   lightbox.open();
+})
+//   });
+// });
 
